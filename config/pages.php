@@ -6,7 +6,9 @@ if (isset($_GET['page'])) {
     $pages = $_GET['page'];
     // echo $pages;
 
-    if ($pages == "data_user") {
+    if ($pages == "home") {
+        include "home.php";
+    } else if ($pages == "data_user") {
         include "page/user/data_user.php";
     } else if ($pages == "data_con_user") {
         include "page/user/data_con_user.php";
@@ -21,6 +23,8 @@ if (isset($_GET['page'])) {
     } else if ($pages == "data_transaksi_pembelian") {
         include "page/transaksi/data_pembelian.php";
     } else {
-        include "page/home/home.php";
+        include "home.php";
     }
+} else {
+    include "home.php";
 }
